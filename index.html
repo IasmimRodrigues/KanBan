@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" class="light-mode">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>KanBan</title>
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,7 +54,13 @@
         <div class="inner">
           <section class="title-avatar">
             <h1>Meu KanBan <img src="./assets/pencil.svg" alt="" /></h1>
-            <img src="https://github.com/IasmimRodrigues.png" alt="" />
+            <div class="title-right">
+              <div class="switch">
+                <button onclick="toggleMode()"></button>
+                <!-- <span></span> -->
+              </div>
+              <img src="https://github.com/IasmimRodrigues.png" alt="" />
+            </div>
           </section>
 
           <section class="filter">
@@ -151,5 +157,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script src="./scripts.js"></script>
   </body>
 </html>
