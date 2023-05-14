@@ -41,6 +41,9 @@
   --switch-bg-url: url(./assets/sun.svg);
   --stroke-color: #00000080;
   --surface-color: #0000000d;
+
+  --background-highlights: #e2d6ff50;
+  --background-over: #e2d6ff95;
 }
 
 .dark-mode {
@@ -73,6 +76,9 @@
   --switch-bg-url: url(./assets/moon.svg);
   --stroke-color: #ffffff80;
   --surface-color: #ffffff1a;
+
+  --background-highlights: #20202450;
+  --background-over: #20202495;
 }
 
 body {
@@ -162,9 +168,9 @@ section.title-avatar {
   border: 0;
   border-radius: 50%;
   box-shadow: 0rem 0.3rem 2rem rgba(124, 58, 237, 0.6);
-  
+
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .title-avatar .title-right .switch button:hover {
@@ -262,11 +268,15 @@ section.kanban {
   display: flex;
   gap: 4.8rem;
   padding-top: 3.2rem;
+
+  /* height: 75%; */
 }
 
 section.kanban > * {
   flex: 1;
   padding: 2.4rem;
+
+  height: 105%;
 }
 
 section.kanban h2 {
@@ -282,6 +292,7 @@ section.kanban h2 {
   border-radius: 0.8rem;
 
   line-height: 130%;
+  cursor: grab;
 }
 
 .card h3 {
@@ -319,4 +330,29 @@ section.kanban h2 {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 190px;
+}
+
+/* css para a parte de drag and drop */
+
+.highlights {
+  background: var(--background-highlights);
+
+  height: 100%;
+}
+
+.cards,
+.card {
+  transition: 0.4s;
+}
+
+.is-dragging {
+  cursor: grab;
+  opacity: 0.3;
+}
+
+.over {
+  background: var(--background-over);
 }
