@@ -7,23 +7,10 @@
 }
 
 :root {
-  font-size: 62.5%;
+  --font-size: 62.5%;
+  font-size: var(--font-size);
   font-family: "Inter", sans-serif;
 
-  /* --background-inner: #fbfaff;
-  --color-roxo: #7c3aed;
-  --color-lilas: #cab3ff;
-  --color-light: #fff;
-  --color-h: #403937;
-  --color-cinza-claro: #e3e3e3;
-  --ion-icon: #505059;
-  --box-shadow: #eae2fd;
-  --color-content-card: #756966;
-  --background-span: #e2d6ff;
-  --color-spam: #7c3aed;
-  --color-botao: #7c3aed; */
-
-  /* novos */
   --background-page: #7c3aed;
   --background-content: #fbfaff;
   --background-filter: #7c3aed;
@@ -44,22 +31,10 @@
 
   --background-highlights: #e2d6ff50;
   --background-over: #e2d6ff95;
+  --background-filter-hover: #6d2cdd;
 }
 
 .dark-mode {
-  /* --background-inner: #323238;
-  --color-roxo: #202024;
-  --color-lilas: #7c7c8a;
-  --color-light: #fff;
-  --color-h: #fff;
-  --color-cinza-claro: #e3e3e3;
-  --ion-icon: #505059;
-  --box-shadow: #505059;
-  --color-content-card: #756966;
-  --background-spam: #e2d6ff;
-  --color-spam: #7c3aed;
-  --color-botao: #7c3aed; */
-
   --background-page: #202024;
   --background-content: #323238;
   --background-filter: #7c3aed;
@@ -173,6 +148,29 @@ section.title-avatar {
   transition: 0.5s;
 }
 
+.title-avatar .title-right .fontButton {
+  display: flex;
+  gap: 10px;
+}
+
+.title-avatar .title-right .fontButton button {
+  padding: 1rem 2rem;
+  border: 0;
+  background: #e2d6ff;
+  border-radius: 0.5rem;
+  color: #403937;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+  gap: 1rem;
+}
+
+.title-avatar .title-right .fontButton button:hover {
+  background: #dccbff;
+}
+
 .title-avatar .title-right .switch button:hover {
   box-shadow: none;
 }
@@ -213,6 +211,10 @@ section.filter {
   align-items: center;
   gap: 0.8rem;
   cursor: pointer;
+}
+
+.filter button:hover {
+  background: var(--background-filter-hover);
 }
 
 .filter button span {
@@ -355,4 +357,145 @@ section.kanban h2 {
 
 .over {
   background: var(--background-over);
+}
+
+/* Modal */
+
+.dialog::backdrop {
+  background-color: #00000050;
+  backdrop-filter: blur(3px);
+}
+
+.dialog {
+  margin: auto;
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  align-items: center;
+  background: var(--background-card);
+  border-radius: 10px;
+  border: none;
+}
+
+.dialog .close-modal {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
+
+.dialog .close-modal button {
+  padding: 5px;
+  border: none;
+  background: var(--background-card);
+  cursor: pointer;
+}
+
+.dialog .close-modal button ion-icon {
+  font-size: 25px;
+  color: var(--color-font);
+}
+
+.dialog h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--background-filter);
+}
+
+.dialog .buttonClose {
+  position: relative;
+  right: 0;
+}
+
+.dialog .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dialog .inputs .input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.dialog .inputs label {
+  color: var(--color-font);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.dialog .inputs input {
+  width: 400px;
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1.5px var(--border-input);
+  color: var(--color-font);
+  font-size: 13px;
+  background: var(--background-input);
+}
+
+.dialog .inputs textarea {
+  width: 400px;
+  height: 200px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1.5px var(--border-input);
+  color: var(--color-font);
+  font-size: 13px;
+  font-weight: 500;
+  resize: none;
+  outline: 0;
+  background: var(--background-input);
+}
+
+.dialog .inputs .input .tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialog .inputs .input .tag button {
+  border: none;
+  background: var(--background-filter);
+  border-radius: 5px;
+  width: 23px;
+  height: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dialog .inputs .input .tag button ion-icon {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dialog .inputs .adicionarCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 40px;
+  padding: 1.2rem 3.2rem;
+  border: none;
+  background: var(--background-filter);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.4s;
+  margin-top: 20px;
+}
+
+.dialog .inputs .adicionarCard:hover {
+  background: var(--background-filter-hover);
 }
